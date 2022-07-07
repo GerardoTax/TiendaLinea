@@ -4,8 +4,20 @@
     Author     : dell
 --%>
 
+
+
+
+<%@page import="Manejadores.ProductoDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="Modelo.Producto"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    Producto producto=new Producto();
+    ProductoDAO p=new ProductoDAO();
+%>
 <html>
     <head>
       <meta charset="UTF-8">
@@ -30,9 +42,25 @@
                        </tr>
                      </thead>
                      <tbody>
-                        
+                         <tr>
+                        <% 
+                            List<Producto> mama = p.listar();
+                            for (Producto pr:mama){
+                        %>
+                        <td> <%= pr.getId() %></td>
+                        <td> <%= pr.getCantidadProducto() %></td>
+                        <td> <%= pr.getNombre() %></td> 
+                        <td> <%= pr.getPrecio() %></td>
+                        <td> <%= pr.getCategoria() %></td>
+                        <td> <%= pr.getFoto() %></td> 
+                         </tr>
+                         <% 
+                             }
+                              
+                         %>
+                                     
                      </tbody>
-                 </table>      
+                 </table>    "  
             </div>
             <div id="formulario">
                 <form class="form-register" action="ContProducto"  method="POST" enctype="multipart/form-data" > 

@@ -29,7 +29,7 @@
 				<a href="Ventanas/Login.jsp" >Iniciar seccion</a>
 			</nav>
                         <div class="m-4" style="height: 550px;" >
-                            <iframe name="ventaFormularios" style="height: 100%; width: 100%; border: none" src="Ventanas/Producto.jsp"  >
+                            <iframe name="ventaFormularios" style="height: 100%; width: 100%; border: none" src="Producto.jsp"  >
                    
                             </iframe>
                

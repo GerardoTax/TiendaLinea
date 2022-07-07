@@ -48,7 +48,7 @@ public class ProductoDAO {
                
            }
        }catch (Exception ex) {
-           
+           System.out.println("Error");
        }
         return lista;
    }

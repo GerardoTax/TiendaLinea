@@ -8,35 +8,24 @@ package Controladores;
 import Manejadores.ProductoDAO;
 import Modelo.Producto;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
 
 /**
  *
  * @author dell
  */
-@MultipartConfig
-@WebServlet(name = "ContProducto", urlPatterns = {"/ContProducto"})
-public class ContProducto extends HttpServlet {
+@WebServlet(name = "HistorialProducto", urlPatterns = {"/HistorialProducto"})
+public class HistorialProducto extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    Producto producto =new Producto();
+    ProductoDAO productoDAO= new ProductoDAO();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -45,13 +34,13 @@ public class ContProducto extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ContProducto</title>");            
+            out.println("<title>Servlet HistorialProducto</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ContProducto at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet HistorialProducto at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-    }
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -66,7 +55,10 @@ public class ContProducto extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            
+            List<Producto> list = new ArrayList<Producto>();
+            list = productoDAO.listar();
+            request.setAttribute("lista", list);
+            request.getRequestDispatcher("Producto.jsp").forward(request, response);
     }
 
     /**
@@ -80,34 +72,7 @@ public class ContProducto extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            Producto producto=new Producto();
-            ProductoDAO productoDAO=new ProductoDAO ();
-        try{
-            
-            int cantidad=Integer.valueOf(request.getParameter("cantidad"));
-            String nombre=request.getParameter("nombre");
-            float precio=Float.valueOf(request.getParameter("precio"));
-            String categoria=request.getParameter("categoria");
-            Part part=request.getPart("foto");
-            InputStream intputStream=part.getInputStream();
-            producto.setCantidadProducto(cantidad);
-            producto.setNombre(nombre);
-            producto.setPrecio(precio);
-            producto.setCategoria(categoria);
-            producto.setFoto(intputStream);
-            productoDAO.agregar(producto);
-            
-            request.getRequestDispatcher("Producto.jsp").forward(request, response);
-            
-            
-        }catch (Exception ex) {
-            
-        }
-        
-        
-        
-        
-        
+        processRequest(request, response);
     }
 
     /**
