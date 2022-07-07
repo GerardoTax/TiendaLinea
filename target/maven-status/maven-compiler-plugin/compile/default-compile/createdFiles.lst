@@ -1,0 +1,4 @@
+Modelo\Producto.class
+Manejadores\ProductoDAO.class
+Conexion\Conexion.class
+Controladores\ContProducto.class

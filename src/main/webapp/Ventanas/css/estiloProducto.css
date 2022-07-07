@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.form-register {
+  width: 400px;
+  background: #9B9B9A;
+  padding: 30px;
+  font-family: 'calibri';
+  color: white;
+  box-shadow: 7px 13px 37px #000;
+}
+
+.form-register h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.controls {
+  width: 100%;
+  background: #24303c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #0CE5FA;
+  font-family: 'calibri';
+  font-size: 18px;
+  color: white;
+}
+
+
+.form-register .botonsR{
+  width: 30%;
+  background: #38FA09;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+}
+
+.form-register .botonsE{
+  width: 30%;
+  background: #09B5FA;
+  
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+}
+
+.form-register .botonsEl{
+  width: 30%;
+  background: #FA1809;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+}
+
+table{
+    background-color: white;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    box-shadow: 7px 13px 37px #000;
+}
+th,td{
+     padding: 30px;
+}
+thead{
+    background-color: #38FA09;
+    border-bottom: solido 5px #0F362D;
+    
+}
+tr:nth-child(even){
+    background-color: #ddd;
+}
+tr:hover td{
+    background-color: #09B5FA;
+    color: white;
+}
+
+#contenedor{
+    background: #9B9B9A;
+    padding: 20px;
+    overflow: hidden;
+}
+
+#tablaValores{
+    float: right;
+    width: 700px;
+}
+
+#formulario{
+    float:left;
+}
