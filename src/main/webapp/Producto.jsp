@@ -50,9 +50,9 @@
                         <td> <%= pr.getId() %></td>
                         <td> <%= pr.getCantidadProducto() %></td>
                         <td> <%= pr.getNombre() %></td> 
-                        <td> <%= pr.getPrecio() %></td>
+                        <td> Q <%= pr.getPrecio() %></td>
                         <td> <%= pr.getCategoria() %></td>
-                        <td> <%= pr.getFoto() %></td> 
+                        <td><img src="ContImg?id=<%= pr.getId()%>" width="50" height="30"></td>
                          </tr>
                          <% 
                              }
