@@ -1,4 +1,6 @@
+Controladores\ContImg.class
 Modelo\Producto.class
 Manejadores\ProductoDAO.class
 Conexion\Conexion.class
+Conexion\Ejecutable.class
 Controladores\ContProducto.class

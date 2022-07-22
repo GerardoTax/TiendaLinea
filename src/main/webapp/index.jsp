@@ -20,16 +20,17 @@
 			<label for="btn-menu">☰</label>
 		</div>
 			<div class="logo">
-				<h1>Logotipo</h1>
+                           
 			</div>
+                    
 			<nav class="menu">
-				<a href="Administracion.jsp">Inicio</a>
-				<a href="#">Nosotros</a>
-				<a href="#">Blog</a>
-				<a href="Ventanas/Login.jsp" >Iniciar seccion</a>
+                            <a href="#"><image src="Imagenes/instagram.png" width="40" /></a>
+                            <a href="#"><image src="Imagenes/facebook.png" width="40" /></a>
+                            <a href="#"><image src="Imagenes/whatsapp.png" width="40" /></a>
+			    <a href="Ventanas/Login.jsp" target="ventaFormularios"><image src="Imagenes/empleados.png" width="40"/></a>
 			</nav>
                         <div class="m-4" style="height: 550px;" >
-                            <iframe name="ventaFormularios" style="height: 100%; width: 100%; border: none" src="Producto.jsp"  >
+                            <iframe name="ventaFormularios" style="height: 100%; width: 100%; border: none" src="Inicio.jsp"  >
                    
                             </iframe>
                
@@ -42,11 +43,10 @@
         <div class="container-menu">
                 <div class="cont-menu">
                         <nav>
-                                <a href="#.jsp">Inicio</a>
-                                <a style="border: none" class="btn btn-outline-secondary" href="Error.jsp" target="ventaFormularios">Productos</a>
-                                <a href="Producto.jsp" target="ventaFormularios" >Ofertas</a>
-                                <a href="Producto.jsp">Ubicacion</a>
-                                <a href="#">Mayoreo</a>
+                                <a href="index.jsp">Inicio</a>
+                                <a for="btn-menu" style="border: none" class="btn btn-outline-secondary" href="Producto.jsp" target="ventaFormularios">Registro</a>
+                                <a href="ProductosTienda.jsp" target="ventaFormularios">Productos</a>
+                                <a href="#">Ubicacion</a>
                                 <a href="#">Empresa</a>
                                 <a href="#">Soporte</a>
                                 <a href="#">politicas</a>
