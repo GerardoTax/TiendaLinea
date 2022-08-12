@@ -7,5 +7,13 @@ body::-webkit-scrollbar {
 	width: 2px;
         
 }
+.contenedor{
+    
+    left: 100px;
+    top: 200px;
+}
+#op{
+   aling-items: center;
+}
 
 	

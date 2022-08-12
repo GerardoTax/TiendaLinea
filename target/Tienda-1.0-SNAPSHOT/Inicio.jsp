@@ -16,7 +16,7 @@
     
     <body>
         <div class="contenedor"> 
-         <div> 
+         <div id="op"> 
         <img id="imagen" src="Imagenes/ImagenInicio.jpg" width="1190" />
         </div>
         <div>

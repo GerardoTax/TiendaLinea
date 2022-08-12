@@ -13,32 +13,44 @@
 	<link rel="stylesheet" href="css/estilos.css">
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-info" >
-	<header class="header">
-		<div class="container">
-		<div class="btn-menu">
-			<label for="btn-menu">☰</label>
-		</div>
-			<div class="logo">
-                           
-			</div>
-                    
-			<nav class="menu">
-                            <a href="#"><image src="Imagenes/instagram.png" width="40" /></a>
-                            <a href="#"><image src="Imagenes/facebook.png" width="40" /></a>
-                            <a href="#"><image src="Imagenes/whatsapp.png" width="40" /></a>
-			    <a href="Ventanas/Login.jsp" target="ventaFormularios"><image src="Imagenes/empleados.png" width="40"/></a>
-			</nav>
-                        <div class="m-4" style="height: 550px;" >
+       
+            <header>
+                <div class="logo">
+                    <a href="#">
+                      <figure>
+                        <img src="Imagenes/Logo.png" 
+                        alt="logo de la empresa">
+                      </figure>
+                    </a>
+                </div>
+                
+                <nav>
+                    <a href="#" class="nav-link"> Inicio</a>
+                    <a href="#" class="nav-link">ubicacion</a>
+                    <a href="#" class="nav-link">face
+                      <img src="./imagenes/logoEmpresa.png" alt="" height="50px">
+                    </a>
+                    <a href="#" class="nav-link">
+                      <img src="Imagenes/empleados.png" alt="" height="50px">
+                    </a>
+                </nav>
+            </header>
+         <nav class="navbar navbar-expand-lg navbar-light bg-info" >
+            <main>
+                <div class="clearfix"></div>
+                    <div class="m-4" style="height: 550px;">
                             <iframe name="ventaFormularios" style="height: 100%; width: 100%; border: none" src="Inicio.jsp"  >
-                   
+                           
                             </iframe>
-               
-                        </div>
+                        
 		</div>
-	</header>
+            </main>
+              
+              
+            
+                      
+            
 	<div class="capa"></div>
-        <!--	--------------->
         <input type="checkbox" id="btn-menu">
         <div class="container-menu">
                 <div class="cont-menu">

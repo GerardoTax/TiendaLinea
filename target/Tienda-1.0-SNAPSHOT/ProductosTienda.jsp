@@ -13,45 +13,45 @@
     Producto producto=new Producto();
     ProductoDAO p=new ProductoDAO();
 %>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>ProductoTienda</title>
-    </head>
-    <jsp:include page="/Recursos/PaquetesLinck.jsp" />
-    <body>
-        
-                <table border="0" width="1000" align="center">
-            <%
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estiloProductoTienda.css">
+    <title>tiendaProducto</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div id="caja">
+            <div class="row">
+                <%
                 List<Producto> mama = p.listar(); 
-                int saltoLinea=0;
                 for (Producto pr:mama){  
-            %>    
-             
-            <th>
-                <br>
-                <img src="ContImg?id=<%= pr.getId()%>" width="200" height="200">
-                 
-                <br>
-                <%= pr.getNombre() %>
-                <br>
-                <%= "Q"+pr.getPrecio() %>
-                <br>
-                <a href="" class="btn btn-secondary">Añadir</a>
-               
-            </th>
-          <%
-              saltoLinea++;
-              if(saltoLinea==3){
-           %>
-           <br>
-           <tr>
-              <%
-               saltoLinea=0;
-              }
-              }
-            
-              %>
-        </table>
-    </body>
+                %>   
+                <div class="product">
+                    <div class="card">
+                        <div id="caja-imagen">
+                            <a href="#">
+                                <img src="ContImg?id=<%= pr.getId()%>" alt="">
+                            </a>
+                            <h3><%= pr.getNombre() %></h3>
+                            <h1><%= "Q"+pr.getPrecio()%></h1>
+                            <div id="botones">
+                                <button name="button" id="detalles">Detalles</button>
+                                <button name="button" id="agregar">Agregar</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <% 
+                }
+                %>
+            </div>
+        </div>          
+    </main>
+
+</body>
 </html>
