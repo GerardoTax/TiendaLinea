@@ -16,7 +16,7 @@
     </head>
     <body>
         <div class="container">
-            <form action="" method="">
+            <form action="Validar" method="post">
                 <div id="caja">
                     <div id="caja-logo">
                             <img src="Imagenes/Logo.png"
@@ -24,16 +24,14 @@
                     </div>
                     <div id="caja-formulario">
                         <label for="">iniciar sesion:</label>
-                        <input type="email" name="" id="text-email">
+                        <input type="email" name="usuario" id="text-email">
                     </div>
                     <div id="caja-formulario">
                         <label for="">ingresar contraseña:</label>
-                        <input type="password" name="" id="text-email">
+                        <input type="password" name="contraseña" id="text-email">
                         <input class="botons" type="submit"  name="opcion" value="Iniciar">
                         <input class="boton" type="submit"  name="opcion" value="Registrar">
                     </div>
-
-
                 </div>
             </form>
 

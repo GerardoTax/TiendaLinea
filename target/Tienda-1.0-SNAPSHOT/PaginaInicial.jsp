@@ -36,7 +36,7 @@
             <ul class="menu">
 			<li><a href="Inicio.jsp" target="ventaFormularios">Inicio</a></li>
 			<li><a href="ProductosTienda.jsp" target="ventaFormularios">Productos</a></li>
-			<li><a href="#">Servicios</a></li>
+			<li><a href="RegistroUsuario.jsp"  target="ventaFormularios">Servicios</a></li>
 			<li><a href="#">Acerca De</a></li>
 			<li><a href="Contacto.jsp" target="ventaFormularios">Contacto</a></li>
             </ul>

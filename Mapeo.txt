@@ -1,0 +1,20 @@
+ CREATE DATABASE sistema_enta;
+	use sistema_venta
+
+CREATE TABLE producto(
+ id int auto_increment,
+ cantidad_producto int,
+ nombre VARCHAR(45) NOT NULL,
+ precio_unidad FLOAT not null,
+ categoria VARCHAR(45) NOT NULL,
+ CONSTRAINT PK_PRODUCTO PRIMARY KEY(id)
+);
+
+CREATE TABLE usuario(
+ nombre VARCHAR(45) DEFAULT NULL,
+ apellido VARCHAR(45) DEFAULT NULL,
+ telefono INT DEFAULT NULL,
+ email  VARCHAR(255) NOT NULL,
+ password VARCHAR(25) DEFAULT NULL,
+ CONSTRAINT PK_USUARIO PRIMARY KEY(email)
+);

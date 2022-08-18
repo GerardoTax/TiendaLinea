@@ -1,0 +1,58 @@
+
+*{
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+#caja{
+    background-color: white;
+    width: 850px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0, 0, 12), 0 1px 2px rgba(0,0, 0, 24);
+}
+
+#caja-logo{
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-top: 20px;
+}
+#caja-logo img{
+    width: 100px;
+    height: 125px;
+}
+#caja-formulario{
+   padding-left: 50px;
+   padding-top: 20px;
+}
+#labelApellido{
+    padding-left: 180px;
+}
+
+#inputNumber{
+    width: 115px;
+}
+#labelcofirmacion{
+    padding-left: 40px;
+}
+input{
+    width: 200px;
+    background: rgb(245, 243, 243);
+    border-radius: 4px;
+    border: 1px solido rgb(245, 243, 243);;
+    font-family: 'calibri';
+    font-size: 18px;
+    border: none;
+}
+.botons{
+    width: 91%;
+    background: #e5e481;
+    border: none;
+    padding: 12px;
+    color: black;
+    font-size: 16px;
+    border-radius: 4px;
+    font-weight: bold;
+}
