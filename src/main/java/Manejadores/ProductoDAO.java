@@ -43,9 +43,7 @@ public class ProductoDAO {
                producto.setPrecio(rs.getFloat(4));
                producto.setCategoria(rs.getString(5));
                producto.setFoto(rs.getBinaryStream(6));
-               lista.add(producto);
-               
-               
+               lista.add(producto);  
            }
        }catch (Exception ex) {
            System.out.println("Error");

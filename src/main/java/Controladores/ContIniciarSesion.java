@@ -5,12 +5,10 @@
  */
 package Controladores;
 
-import Conexion.Conexion;
+import Manejadores.UsuarioDAO;
+import Modelo.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author dell
  */
-@WebServlet(name = "Validar", urlPatterns = {"/Validar"})
-public class Validar extends HttpServlet {
+@WebServlet(name = "ContIniciarSesion", urlPatterns = {"/ContIniciarSesion"})
+public class ContIniciarSesion extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +39,10 @@ public class Validar extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Validar</title>");            
+            out.println("<title>Servlet ContIniciarSesion</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Validar at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ContIniciarSesion at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -76,28 +74,45 @@ public class Validar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            
-            Conexion cn=new Conexion();
-            Connection con;
-            PreparedStatement ps;
-            ResultSet rs;
-             
+            Usuario usuario=new Usuario();
+            UsuarioDAO usuarioDAO= new UsuarioDAO();
         try{
-            String usuario= request.getParameter("usuario");
-            String contraseña= request.getParameter("contraseña");
-            String sql ="select* from producto where id="+usuario;
-            con=cn.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
-                
+            String opcion=request.getParameter("opcion");
+            switch (opcion) {
+                case "Iniciar":
+                    String email=request.getParameter("email");
+                    String password=request.getParameter("password");
+                    usuario=usuarioDAO.validar(email);
+                    if(usuario.getEmail() !=null && usuario.getPassword().equals(password)){
+                         //request.getRequestDispatcher("Producto.jsp").forward(request, response);
+                         request.setAttribute("usuario", usuario);
+                         request.getRequestDispatcher("index.jsp").forward(request, response);
+                         //request.getRequestDispatcher("IniciarSesion.jsp?men=validar").forward(request, response);
+                    }
+                    else{
+                        request.getRequestDispatcher("IniciarSesion.jsp?men=false").forward(request, response);
+                        //request.getRequestDispatcher("RegistroUsuario.jsp").forward(request, response);
+                    }
+                    
+                break;
+                case "Registrar":
+                    request.getRequestDispatcher("RegistroUsuario.jsp").forward(request, response);
+                break;
+                default:
+                    throw new AssertionError();
+            }
+        
         
         }catch (Exception ex) {
             
-        } 
-         
+        }
     }
-                   
-       
+
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
     @Override
     public String getServletInfo() {
         return "Short description";

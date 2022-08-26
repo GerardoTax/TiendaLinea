@@ -6,7 +6,9 @@
 package Conexion;
 
 import Manejadores.ProductoDAO;
+import Manejadores.UsuarioDAO;
 import Modelo.Producto;
+import Modelo.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,12 +18,14 @@ import java.util.List;
  */
 public class Ejecutable {
     public static void main(String args[]){
-     Producto p=new Producto();
-     ProductoDAO a= new ProductoDAO();
-     List<Producto> list = a.listar();
-            for (Producto pr :  list){
-                System.out.println(pr.getId());
-                System.out.println(pr.getNombre());
-            }
+      
+        Usuario usu= new Usuario();
+        UsuarioDAO u=new UsuarioDAO();
+        usu=u.validar("luistax187@gmail.com");
+        
+        System.out.println(usu.getNombre());
+        System.out.println(usu.getApellido());
+        System.out.println(usu.getPassword());
+        System.out.println("hola como estas");
     }
 }

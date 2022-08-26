@@ -13,8 +13,54 @@ CREATE TABLE producto(
 CREATE TABLE usuario(
  nombre VARCHAR(45) DEFAULT NULL,
  apellido VARCHAR(45) DEFAULT NULL,
+ nit INT NOT NULL UNIQUE,
  telefono INT DEFAULT NULL,
  email  VARCHAR(255) NOT NULL,
  password VARCHAR(25) DEFAULT NULL,
  CONSTRAINT PK_USUARIO PRIMARY KEY(email)
 );
+
+CREATE TABLE compras (
+   idCompras int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18,
+   emal VARCHAR(255) NOT NULL,
+   idPago int(11) UNSIGNED NOT NULL,
+   FechaCompras varchar(11) DEFAULT NULL,
+   Monto double DEFAULT NULL,
+   Estado varchar(50) DEFAULT NULL
+);
+
+  ALTER TABLE compras
+  ADD PRIMARY KEY (idCompras),
+  ADD KEY  Compras_FKIndex1 (idPago),
+  ADD KEY  Compras_FKIndex2 (email);
+
+CREATE TABLE detalle_compras(
+   idDetalle int(10) UNSIGNED NOT NULL,
+   idProducto int(11) UNSIGNED NOT NULL,
+   idCompras int(11) UNSIGNED NOT NULL,
+   Cantidad int(11) UNSIGNED DEFAULT NULL,
+   PrecioCompra double DEFAULT NULL
+);
+
+  ALTER TABLE detalle_compras
+  ADD PRIMARY KEY (idDetalle, idProducto,idCompras),
+  ADD KEY Producto_has_Compras_FKIndex1 (idProducto),
+  ADD KEY Producto_has_Compras_FKIndex2 (idCompras);
+
+
+CREATE TABLE pago (
+   idPago int(11) UNSIGNED NOT NULL,
+  Monto double DEFAULT NULL
+);
+
+  ALTER TABLE pago
+  ADD PRIMARY KEY (idPago);
+
+ALTER TABLE compras
+  MODIFY idCompras int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+ALTER TABLE detalle_compras
+  MODIFY idDetalle int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
+ALTER TABLE pago
+  MODIFY idPago int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;

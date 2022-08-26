@@ -1,74 +1,56 @@
 <%-- 
-    Document   : index
-    Created on : 6/07/2022, 11:20:23 PM
+    Document   : PaginaInicial
+    Created on : 22/07/2022, 03:30:16 PM
     Author     : dell
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="es">
+<html>
     <head>
-	<meta charset="UTF-8">
-	<title>Tienda </title>
-	<link rel="stylesheet" href="css/estilos.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+        <link rel="stylesheet" href="css/paginacss.css">
     </head>
     <body>
-       
             <header>
                 <div class="logo">
-                    <a href="#">
-                      <figure>
-                        <img src="Imagenes/Logo.png" 
-                        alt="logo de la empresa">
-                      </figure>
-                    </a>
+                  <a href="Inicio.jsp" target="ventaFormularios">
+                    <figure>
+                      <img src="Imagenes/Logo.png" 
+                      alt="logo de la empresa">
+                    </figure>
+                  </a>
                 </div>
-                
                 <nav>
-                    <a href="#" class="nav-link"> Inicio</a>
-                    <a href="#" class="nav-link">ubicacion</a>
-                    <a href="#" class="nav-link">face
-                      <img src="./imagenes/logoEmpresa.png" alt="" height="50px">
-                    </a>
-                    <a href="#" class="nav-link">
-                      <img src="Imagenes/empleados.png" alt="" height="50px">
-                    </a>
+                  <a href="#" class="nav-link">
+                    <img src="Imagenes/carrito.png" alt="" height="35px">
+                  </a>
+                    <!<!-- falta el target para que te cague en la misma pagina -->
+                    <a href="IniciarSesion.jsp"  class="nav-link">
+                    <img src="Imagenes/user.png" alt="" height=40px">
+                    <br>
+                    <label for="" value="${usuario.getNombre()}" >Iniciar Sesion</label>
+                    <label> ${usuario.getNombre()}</label>
+                  </a>
                 </nav>
             </header>
-         <nav class="navbar navbar-expand-lg navbar-light bg-info" >
+            <ul class="menu">
+			<li><a href="Inicio.jsp" target="ventaFormularios">Inicio</a></li>
+			<li><a href="ProductosTienda.jsp" target="ventaFormularios">Productos</a></li>
+			<li><a href="Producto.jsp"  target="ventaFormularios">Servicios</a></li>
+			<li><a href="#">Acerca De</a></li>
+			<li><a href="Contacto.jsp" target="ventaFormularios">Contacto</a></li>
+            </ul>
+            <div class="clearfix"></div>  
             <main>
-                <div class="clearfix"></div>
-                    <div class="m-4" style="height: 550px;">
-                            <iframe name="ventaFormularios" style="height: 100%; width: 100%; border: none" src="Inicio.jsp"  >
-                           
-                            </iframe>
-                        
+               <div class="m-4" style="height: 550px;">
+                    <iframe name="ventaFormularios" style="height: 100%; width: 100%; border: none" src="Inicio.jsp"  ></iframe>     
 		</div>
             </main>
-              
-              
-            
-                      
-            
-	<div class="capa"></div>
-        <input type="checkbox" id="btn-menu">
-        <div class="container-menu">
-                <div class="cont-menu">
-                        <nav>
-                                <a href="index.jsp">Inicio</a>
-                                <a for="btn-menu" style="border: none" class="btn btn-outline-secondary" href="Producto.jsp" target="ventaFormularios">Registro</a>
-                                <a href="ProductosTienda.jsp" target="ventaFormularios">Productos</a>
-                                <a href="#">Ubicacion</a>
-                                <a href="#">Empresa</a>
-                                <a href="#">Soporte</a>
-                                <a href="#">politicas</a>
-                                <a href="#">Sugerencias</a>
-                                <a href="#">Empleos</a>
-                        </nav>
-                        <label for="btn-menu">✖️</label>
-                </div>
-        </div>
-    </nav>
-        
-</body>
+            <div class="clearfix"></div>
+            <footer>
+                Luis Gerardo.M Tax Mantanico
+            </footer>
+    </body>
 </html>

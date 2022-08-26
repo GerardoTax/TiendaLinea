@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="" method="">
+        <form action="RegistroUsuario" method="POST">
             <div id="caja">
                 <div id="caja-logo">
                         <img src="Imagenes/Logo.png"
@@ -24,27 +24,27 @@
                 </div>
                 <div id="caja-formulario">
                     <label for="">Nombre:</label>
-                    <input type="text">
+                    <input type="text" name="nombre">
                     <label for="" id="labelApellido">Apellido:</label>
-                    <input type="text">
+                    <input type="text" name="apellido">
                 </div>    
                 <div id="caja-formulario">
                     <label for="">Telefono:</label>
-                    <input type="number" name="" id="inputNumber">
+                    <input type="number" name="telefono" id="inputNumber">
                     <label for="" id="labelApellido">Correo Electronico:</label>
-                    <input type="email" name="" >
+                    <input type="email" name="email" >
                 </div>
                 <div id="caja-formulario">
                     <label for="">contraseña:</label>
                     <input type="password" name="" >
                     <label for="" id="labelcofirmacion">Confirma la contraseña:</label>
-                    <input type="password" name="" >
+                    <input type="password" name="password" >
                 </div>    
                 <div id="caja-formulario">
-                    <input class="botons" type="submit"  name="opcion" value="Iniciar">
+                    <input class="botons" type="submit"  name="opcion" value="Registrar">
                 </div>
-            </div>
-        </form>
+            </div>     
+        </form>        
     </div>
 </body>
 </html>
