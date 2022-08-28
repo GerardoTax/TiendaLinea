@@ -15,6 +15,16 @@
     <title>Registro de Usuario</title>
 </head>
 <body>
+    <header>
+                <div class="logo">
+                  <a href="index.jsp">
+                    <figure>
+                      <img src="Imagenes/Logo.png" 
+                      alt="logo de la empresa">
+                    </figure>
+                  </a>
+                </div>
+    </header>
     <div class="container">
         <form action="RegistroUsuario" method="POST">
             <div id="caja">

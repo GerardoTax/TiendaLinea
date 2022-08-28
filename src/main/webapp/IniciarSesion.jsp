@@ -17,7 +17,7 @@
     <body>
             <header>
                 <div class="logo">
-                  <a href="Inicio.jsp" target="ventaFormularios">
+                  <a href="index.jsp">
                     <figure>
                       <img src="Imagenes/Logo.png" 
                       alt="logo de la empresa">
@@ -33,11 +33,11 @@
                              alt="logo de la empresa">
                     </div>
                     <div id="caja-formulario">
-                        <label for="">iniciar sesion:</label>
+                        <label for="">Correo Electronico:</label>
                         <input type="email" name="email" id="text-email">
                     </div>
                     <div id="caja-formulario">
-                        <label for="">ingresar contraseña:</label>
+                        <label for="">Contraseña:</label>
                         <input type="password" name="password" id="text-email">
                         <input class="botons" type="submit"  name="opcion" value="Iniciar">
                         <input class="boton" type="submit"  name="opcion" value="Registrar">

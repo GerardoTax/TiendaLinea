@@ -28,6 +28,26 @@ public class ProductoDAO {
     PreparedStatement ps;
     ResultSet rs;
     
+   public Producto Consultaproducto(int idProducto){
+       Producto producto= new Producto();
+       String sql="select* from producto where id="+idProducto;
+       try{
+           con=cn.getConnection();
+           ps=con.prepareStatement(sql);
+           rs=ps.executeQuery();
+         while(rs.next()){
+               producto.setId(rs.getInt(1));
+               producto.setCantidadProducto(rs.getInt(2));
+               producto.setNombre(rs.getString(3));
+               producto.setPrecio(rs.getFloat(4));
+               producto.setCategoria(rs.getString(5));
+               producto.setFoto(rs.getBinaryStream(6));
+         }
+       }catch (Exception ex) {
+           
+       }
+    return producto;
+   } 
    public List listar(){
        List<Producto>lista= new ArrayList<>();
        String sql="select* from producto";

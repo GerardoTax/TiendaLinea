@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <<link rel="stylesheet" href="css/estiloContacto.css"/>
+        <link rel="stylesheet" href="css/estiloContacto.css"/>
         <title>contacto</title>
     </head>
     <body>

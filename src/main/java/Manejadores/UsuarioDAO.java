@@ -23,15 +23,16 @@ public class UsuarioDAO {
     ResultSet rs;
     
     public void agregar(Usuario usuario){
-       String sql=" insert into usuario(nombre,apellido,telefono,email,password)values(?,?,?,?,?)";
+       String sql=" insert into cliente(nombre,apellido,nit,telefono,email,password)values(?,?,?,?,?,?)";
        try{
            con=cn.getConnection();
            ps=con.prepareStatement(sql);
            ps.setString(1,usuario.getNombre());
            ps.setString(2,usuario.getApellido());
-           ps.setInt(3,usuario.getTelefono() );
-           ps.setString(4,usuario.getEmail());
-           ps.setString(5,usuario.getPassword());
+           ps.setString(3,"C/F");
+           ps.setInt(4,usuario.getTelefono() );
+           ps.setString(5,usuario.getEmail());
+           ps.setString(6,usuario.getPassword());
            ps.executeUpdate();
 
        }catch (Exception ex) {
@@ -41,16 +42,16 @@ public class UsuarioDAO {
    public Usuario validar(String email){
             Usuario usuario=new Usuario();
        try{
-            String sql ="select* from usuario where email='"+email+"'";
+            String sql ="select* from cliente where email='"+email+"'";
             con=cn.getConnection();
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             while(rs.next()){
-                usuario.setNombre(rs.getString(1));
-                usuario.setApellido(rs.getString(2));
-                usuario.setTelefono(rs.getInt(3));
-                usuario.setEmail(rs.getString(4));
-                usuario.setPassword(rs.getString(5));     
+                usuario.setNombre(rs.getString(2));
+                usuario.setApellido(rs.getString(3));
+                usuario.setTelefono(rs.getInt(5));
+                usuario.setEmail(rs.getString(6));
+                usuario.setPassword(rs.getString(7));     
             }
            rs.close();
        }catch (SQLException e) {

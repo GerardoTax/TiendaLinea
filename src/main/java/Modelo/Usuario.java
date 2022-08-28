@@ -4,6 +4,7 @@ package Modelo;
 public class Usuario {
     private String nombre;
     private String apellido;
+    private int nit;
     private int telefono;
     private String email;
     private String password;
@@ -50,5 +51,14 @@ public class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public int getNit() {
+        return nit;
+    }
+
+    public void setNit(int nit) {
+        this.nit = nit;
+    }
+    
     
 }

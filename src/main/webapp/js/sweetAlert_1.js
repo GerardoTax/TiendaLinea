@@ -1,5 +1,5 @@
 Swal.fire({
     icon:'error',
-    text:'Contraseña o email incorecto',
+    text:'Usuario o Contraseña incorrecto',
     time:500,
 });

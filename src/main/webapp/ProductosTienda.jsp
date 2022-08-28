@@ -24,6 +24,7 @@
 <body>
     <header></header>
     <main>
+        <label>:${contador}</label>
         <div id="caja">
             <div class="row">
                 <%
@@ -39,8 +40,10 @@
                             <h3><%= pr.getNombre() %></h3>
                             <h1><%= "Q"+pr.getPrecio()%></h1>
                             <div id="botones">
-                                <button name="button" id="detalles">Detalles</button>
-                                <button name="button" id="agregar">Agregar</button>
+                                <button href="Inicio.jsp" name="button" id="detalles">Detalles</button>
+                                <button href="ContCarrito?accion=agregarCarrito&idProducto="<%=pr.getId()%> name="button" id="agregar">Agregar</button>
+                                <a href="ContCarrito?accion=agregarCarrito&idProducto=<%=pr.getId()%>"> comprar</a>
+                                <a href="ContCarrito?accion=Inicio">iniic</a>
                             </div>
                             
                         </div>

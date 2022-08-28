@@ -10,6 +10,21 @@ CREATE TABLE producto(
  CONSTRAINT PK_PRODUCTO PRIMARY KEY(id)
 );
 
+
+CREATE TABLE cliente(
+ idCliente int(11) UNSIGNED NOT NULL,  
+ nombre VARCHAR(45)  NOT NULL,
+ apellido VARCHAR(45) NOT NULL,
+ nit VARCHAR(25) NOT NULL,
+ telefono INT DEFAULT NULL,
+ email  VARCHAR(255) NOT NULL UNIQUE,
+ password VARCHAR(25) DEFAULT NULL,
+ CONSTRAINT PK_USUARIO PRIMARY KEY(idCliente)
+);
+
+  ALTER TABLE cliente
+  MODIFY idCliente int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 CREATE TABLE usuario(
  nombre VARCHAR(45) DEFAULT NULL,
  apellido VARCHAR(45) DEFAULT NULL,
@@ -21,8 +36,8 @@ CREATE TABLE usuario(
 );
 
 CREATE TABLE compras (
-   idCompras int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18,
-   emal VARCHAR(255) NOT NULL,
+   idCompras int(11) UNSIGNED NOT NULL,
+   idCliente int(11) UNSIGNED NOT NULL,
    idPago int(11) UNSIGNED NOT NULL,
    FechaCompras varchar(11) DEFAULT NULL,
    Monto double DEFAULT NULL,
@@ -32,7 +47,7 @@ CREATE TABLE compras (
   ALTER TABLE compras
   ADD PRIMARY KEY (idCompras),
   ADD KEY  Compras_FKIndex1 (idPago),
-  ADD KEY  Compras_FKIndex2 (email);
+  ADD KEY  Compras_FKIndex2 (idCliente);
 
 CREATE TABLE detalle_compras(
    idDetalle int(10) UNSIGNED NOT NULL,
@@ -64,3 +79,6 @@ ALTER TABLE detalle_compras
 
 ALTER TABLE pago
   MODIFY idPago int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+ALTER TABLE cliente 
+  MODIFY nit VARCHAR(45)  NOT NULL;

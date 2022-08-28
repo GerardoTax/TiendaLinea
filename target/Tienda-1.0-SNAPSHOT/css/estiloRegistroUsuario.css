@@ -2,6 +2,22 @@
 *{
     font-weight: bold;
     font-family: sans-serif;
+      margin: 0 auto;
+}
+header{
+  display: flex;
+  height: 70px;
+  background: #48C9B0;
+  padding-right: 1200px;
+  padding-bottom: 25px;
+  border-bottom: #3e4677 20px solid;
+
+}
+.logo {
+  display: flex;
+}
+.logo img{
+  height: 100px;
 }
 
 #caja{

@@ -29,6 +29,7 @@
                     <!<!-- falta el target para que te cague en la misma pagina -->
                     <a href="IniciarSesion.jsp"  class="nav-link">
                     <img src="Imagenes/user.png" alt="" height=40px">
+                    <label> :${contador}</label>
                     <br>
                     <label for="" value="${usuario.getNombre()}" >Iniciar Sesion</label>
                     <label> ${usuario.getNombre()}</label>

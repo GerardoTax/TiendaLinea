@@ -70,6 +70,4 @@ public class Producto {
         this.foto = foto;
     }
     
-    
-    
 }

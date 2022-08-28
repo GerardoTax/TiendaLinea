@@ -21,11 +21,12 @@ public class Ejecutable {
       
         Usuario usu= new Usuario();
         UsuarioDAO u=new UsuarioDAO();
-        usu=u.validar("luistax187@gmail.com");
-        
-        System.out.println(usu.getNombre());
-        System.out.println(usu.getApellido());
-        System.out.println(usu.getPassword());
-        System.out.println("hola como estas");
+        usu.setNombre("luis");
+        usu.setApellido("perez");
+        usu.setNit(12);
+        usu.setTelefono(123456789);
+        usu.setEmail("juan12313@gmail.com");
+        usu.setPassword("123456789");
+        u.agregar(usu);
     }
 }
